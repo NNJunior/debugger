@@ -5,7 +5,7 @@
 2. Откройте файл ```~/.zshrc``` or ```~/.bashhrc``` (это зависит от того, какую Shell вы используете: ```zsh``` или ```bash```)
 3. Добавьте в файл следующую строку: 
 ```
-alias tester="/absolute/path/to/folder/main.sh"
+alias tester="/absolute/path/to/folder/src/main.sh"
 ```
 Где ```/absolute/path/to/folder``` - это абсолютный путь к скачанной папке. Перезайдите в терминал. Теперь вы можете использовать команду ```tester```!
 
