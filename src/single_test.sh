@@ -13,7 +13,7 @@ TIMEOUT_CODE="$?"
 if [[ "$TIMEOUT_CODE" -eq 0 ]]
 then
 
-"../../testing/scripts/check.sh" 2> "/dev/null"
+"../../testing/scripts/check.sh" 2> "errors.txt"
 CORRECT_ANSW="$?"
 if [[ "$CORRECT_ANSW" -eq 0 ]]
 then
