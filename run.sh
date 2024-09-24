@@ -1,0 +1,1 @@
+../scripts/run.sh < input.txt &> output.txt 2> errors.txt
