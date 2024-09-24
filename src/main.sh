@@ -1,5 +1,5 @@
 FOLDER=$(realpath "$(dirname "$0")");
-source "$FOLDER/src/commands.sh";
+source "$FOLDER/commands.sh";
 
 if [[ "$NEWENV" == "$1" ]]
 then
