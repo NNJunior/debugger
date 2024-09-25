@@ -3,12 +3,12 @@ FOLDER=$(realpath "$(dirname "$0")");
 source "$FOLDER/colors.sh"
 source "$FOLDER/messages.sh"
 
-cp "testing/tests/$1" "run/environment/input.txt"
+cp "testing/tests/$2" "run/environment/input.txt"
 
-echo "${WHITE}$1${NC} \c";
+echo "${WHITE}$2${NC} \c";
 
 cd "run/environment";
-gtimeout 1s "$FOLDER/run.sh" < "/dev/null" &> "/dev/null" 2> "/dev/null"
+gtimeout $1 "$FOLDER/run.sh" < "/dev/null" &> "/dev/null" 2> "/dev/null"
 TIMEOUT_CODE="$?"
 if [[ "$TIMEOUT_CODE" -eq 0 ]]
 then

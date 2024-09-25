@@ -3,7 +3,7 @@ FOLDER=$(realpath "$(dirname "$0")");
 source "$FOLDER/colors.sh"
 source "$FOLDER/messages.sh"
 
-TESTS=$@
+TESTS=${@:2}
 
 if [[ $* == *-all* ]]
 then
@@ -27,6 +27,6 @@ for test in $TESTS
 do
 if [[ "$test" != "-o" ]] && [[ "$test" != "-i" ]] && [[ "$test" != "-e" ]]
 then
-"$FOLDER/single_test.sh" "$test" $*
+"$FOLDER/single_test.sh" $1 "$test" $*
 fi
 done
