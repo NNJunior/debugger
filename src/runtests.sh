@@ -11,18 +11,18 @@ TESTS=$(ls testing/tests)
 fi
 
 cd "run/environment";
-echo "Compiling..."
+echo -e "Compiling..."
 "../scripts/compile.sh" < input.txt &> output.txt 2> errors.txt
 COMPILE_CODE="$?"
 if [[ $COMPILE_CODE -ne 0 ]]
 then
-echo "$CE:"
+echo -e "$CE:"
 cat errors.txt
 exit 0;
 fi
 
 cd "../../"
-echo "Running tests..."
+echo -e "Running tests..."
 for test in $TESTS
 do
 if [[ "$test" != "-o" ]] && [[ "$test" != "-i" ]] && [[ "$test" != "-e" ]]
