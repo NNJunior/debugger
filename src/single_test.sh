@@ -5,7 +5,7 @@ source "$FOLDER/messages.sh"
 
 cp "testing/tests/$2" "run/environment/input.txt"
 
-echo -e "${WHITE}$2${NC} \c";
+echo "${WHITE}$2${NC} \c";
 
 cd "run/environment";
 gtimeout $1 "$FOLDER/run.sh" < "/dev/null" &> "/dev/null" 2> "/dev/null"
@@ -17,32 +17,32 @@ then
 CORRECT_ANSW="$?"
 if [[ "$CORRECT_ANSW" -eq 0 ]]
 then
-echo -e "$OK"
+echo "$OK"
 else
-echo -e "$WA"
+echo "$WA"
 fi
 elif [[ "$TIMEOUT_CODE" -eq 124 ]]
 then
-echo -e "$TL"
+echo "$TL"
 else
-echo -e "$RE"
+echo "$RE"
 fi
 
 if [[ $* == *-i* ]]
 then
-echo -e "${YELLOW}input.txt:${NC}"
+echo "${YELLOW}input.txt:${NC}"
 cat input.txt
 echo;
 fi
 if [[ $* == *-o* ]]
 then
-echo -e "${YELLOW}output.txt:${NC}"
+echo "${YELLOW}output.txt:${NC}"
 cat output.txt
 echo;
 fi
 if [[ $* == *-e* ]]
 then
-echo -e "${YELLOW}errors:${NC}"
+echo "${YELLOW}errors:${NC}"
 cat errors.txt
 echo;
 fi
