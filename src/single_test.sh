@@ -8,7 +8,7 @@ cp "testing/tests/$2" "run/environment/input.txt"
 echo -e "${WHITE}$2${NC} \c";
 
 cd "run/environment";
-gtimeout $1 "$FOLDER/run.sh" < "/dev/null" &> "/dev/null" 2> "/dev/null"
+timeout $1 "$FOLDER/run.sh" < "/dev/null" &> "/dev/null" 2> "/dev/null"
 TIMEOUT_CODE="$?"
 if [[ "$TIMEOUT_CODE" -eq 0 ]]
 then
